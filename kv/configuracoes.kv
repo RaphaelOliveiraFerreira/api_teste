@@ -1,0 +1,59 @@
+
+<Configuracoes>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#001824")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+#        Image:
+#            pos_hint: {"right": 0.5, "top": 0.7}
+#            size_hint: 1, 0.2
+#            source: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\foto_perfil\fotoconf.png"
+        Label:
+            text: "Codigo "
+            id: labelconfi_id0
+            font_size: 24
+            pos_hint: {"right": 0.9, "top": 0.99}
+            size_hint: 0.8, 0.4
+            markup: True
+        Label:
+            text: "Codigo "
+            id: labelconfi_id_esquerda
+            font_size: 24
+            pos_hint: {"right": 0.45, "top": 0.8}
+            size_hint: 0.4, 0.6
+            markup: True
+        Label:
+            text: "Codigo "
+            id: labelconfi_id_direita
+            font_size: 24
+            pos_hint: {"right": 0.9, "top": 0.8}
+            size_hint: 0.4, 0.6
+            markup: True
+
+        LabelButton:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: 'icones/botao.png' if self.state == 'normal' else 'icones/botao_apertado.png'
+            text: "Atualizar perfil"
+            pos_hint: {"right": 0.9, "top": 0.2}
+            size_hint: 0.4, 0.2
+            on_release:
+                app.mudar_tela("fotoperfil")
+
+        LabelButton:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: 'icones/botao.png' if self.state == 'normal' else 'icones/botao_apertado.png'
+            text: "Voltar"
+            pos_hint: {"right": 0.45, "top": 0.2}
+            size_hint: 0.4, 0.2
+            on_release:
+                app.mudar_tela("homepage")

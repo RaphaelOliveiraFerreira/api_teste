@@ -1,0 +1,109 @@
+
+<HomePage>:
+    FloatLayout:
+        orientation: 'vertical'
+        canvas:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\bg1.png"
+         
+        Image:
+            pos_hint: {"right": 1, "top": 0.7}
+            size_hint: 1, 0.4
+            source: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\corrida1.png"
+        Label:
+            text: "Direciona corrida!"
+            pos_hint: {"right": 1, "top": 0.95}
+            size_hint: 1, 0.4
+        Label:
+            text: "!"
+            pos_hint: {"right": 0.25, "top": 0.5}
+            size_hint: 1, 0.4
+# botao das configuraçoes na parte superior
+        Button:
+            pos_hint: {"right": 1, "top": 1}
+            size_hint: 0.25, 0.15
+            background_normal: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\correndo.png"
+            #background_down: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\correndo_pressed.png"
+            on_release:
+                app.mudar_tela("configuracoes")
+
+
+# botao inferior 1 Nova atividade
+        Button:
+            pos_hint: {"right": 0.25, "top": 0.22}
+            size_hint: 0.25, 0.15
+            background_normal: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\add.png"
+            #background_down: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\add_pressed.png"
+            on_release:
+                app.mudar_tela("atividade")
+# Label abaixo do botão
+        LabelButton:
+            text: "Atividade"
+            pos_hint: {"center_x": 0.15, "top": 0.12}  # Centraliza horizontalmente acima do botão
+            size_hint: None, None  # Tamanho automático
+            font_size: 20  # Ajuste o tamanho da fonte conforme necessário
+            on_release:
+                app.mudar_tela("atividade")
+
+# botao inferior 2 historico
+        Button:
+            pos_hint: {"right": 0.5, "top": 0.22}
+            size_hint: 0.25, 0.15
+            background_normal: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\historico2.png"
+            #background_down: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\historico2_pressed.png"
+            on_release:
+                app.mudar_tela("historico")
+        LabelButton:
+            text: "Histórico"
+            pos_hint: {"center_x": 0.4, "top": 0.12}  # Centraliza horizontalmente acima do botão
+            size_hint: None, None  # Tamanho automático
+            font_size: 20  # Ajuste o tamanho da fonte conforme necessário
+            on_release:
+                app.mudar_tela("historico")
+
+# botao inferior 3 planilha de treino
+        Button:
+            pos_hint: {"right": 0.75, "top": 0.22}
+            size_hint: 0.25, 0.15
+            background_normal: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\treino.png"
+            #background_down: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\treino_pressed.png"
+            on_release:
+                app.mudar_tela("treino")
+        LabelButton:
+            text: "Treino"
+            pos_hint: {"center_x": 0.65, "top": 0.12}  # Centraliza horizontalmente acima do botão
+            size_hint: None, None  # Tamanho automático
+            font_size: 20  # Ajuste o tamanho da fonte conforme necessário
+            on_release:
+                app.mudar_tela("treino")
+
+# botao inferior 4 ranking
+        Button:
+            pos_hint: {"right": 0.98, "top": 0.22}
+            size_hint: 0.23, 0.15
+            background_normal: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\ranking.png"
+            #background_down: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\ranking_pressed.png"
+            on_release:
+                app.mudar_tela("ranking")
+# botao com foto do perfil 
+        Button:
+            pos_hint: {"right": 0.2, "top": 1}
+            size_hint: 0.24, 0.15
+            id: foto_perfil_homepage
+            background_normal: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\settings.png"
+            background_down: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\settings_pressed.png"
+            on_release:
+                app.mudar_tela("perfilconfig")
+#ranking
+                
+        LabelButton:
+            text: "Ranking"
+            pos_hint: {"center_x": 0.9, "top": 0.12}  # Centraliza horizontalmente acima do botão
+            size_hint: None, None  # Tamanho automático
+            font_size: 20  # Ajuste o tamanho da fonte conforme necessário
+            on_release:
+                app.mudar_tela("ranking")
+
+

@@ -1,0 +1,257 @@
+<Treino>:
+    FloatLayout:
+        canvas:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'icones/bg1.png'
+
+# GridLayout dos botões parte inferior 
+        GridLayout:
+            rows: 1
+            pos_hint: {'center_x': 0.5, "top": 0.12}  # Centraliza horizontalmente
+            size_hint: 1, 0.15  
+
+# Botão da esquerda
+            LabelButton:
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'icones/botao.png' if self.state == 'normal' else 'icones/botao_apertado.png'
+                on_release: app.mudar_tela('homepage')
+                text: 'Voltar'
+                size_hint: 0.30, 1    
+
+# Botão do centro
+            LabelButton:
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'icones/botao.png' if self.state == 'normal' else 'icones/botao_apertado.png'
+                on_release: print('treino feito')
+                text: 'Adicionar treino'
+                size_hint: 0.30, 1
+
+# Botão da direita
+            LabelButton:
+                canvas.before:
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                        source: 'icones/botao.png' if self.state == 'normal' else 'icones/botao_apertado.png'
+                on_release: print('Definir novo treino')
+                text: 'Definir novo\n treino'
+                size_hint: 0.30, 1
+
+# Imagem no topo
+        Image:
+            pos_hint: {"right": 1, "top": 1}
+            size_hint: 0.2, 0.2
+            source: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\corrida1.png"
+            id: imagagem_treino
+
+# Título da página e informação sobre treino
+        Label:
+            pos_hint: {'center_x': 0.5, 'top': 0.90}
+            size_hint: 0.8, 0.05
+            id: label_treino
+            text: "Seu próximo treino"
+
+        Label:
+            pos_hint: {'center_x': 0.5, 'top': 0.86}
+            size_hint: 0.8, 0.05
+            id: label_treino_data
+            text: "Você ainda não possui uma planilha de treino"
+##############################################################################################
+
+
+        GridLayout:
+            cols: 4  # Quatro colunas
+            rows: 5  # 5 linhas (cada célula será preenchida)
+            pos_hint: {'center_x': 0.5, "top": 0.35}
+            size_hint: 0.98, 0.25
+
+            # Primeira linha
+            Label:
+                text: "Caminhada"
+                canvas.before:
+                    Color:
+                        rgba: 0,206/255,209/255, 1  # Fundo azul
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text: "Abaixo de 50%\nFC máxima"  # Espaço vazio para a segunda coluna
+                canvas.before:
+                    Color:
+                        rgba: 0/255,128/255,128/255, 1  # Fundo cinza claro
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text: "Intevalo"
+                canvas.before:
+                    Color:
+                        rgba: 138/255,43/255,226/255, 1  # Fundo roxo
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text: "Recuperação"  # Espaço vazio para a quarta coluna
+                canvas.before:
+                    Color:
+                        rgba: 0/255,128/255,128/255, 1  # Fundo cinza claro
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            # Segunda linha
+            Label:
+                text: "Leve"
+                canvas.before:
+                    Color:
+                        rgba: 14/255,81/255,139/255, 1  # Fundo verde
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text: "55% a 65%\nFC máxima"  # Segunda coluna vazia
+                canvas.before:
+                    Color:
+                        rgba: 0/255,128/255,128/255, 1  # Fundo cinza claro
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text: "Moderado"
+                canvas.before:
+                    Color:
+                        rgba: 255/255,165/255,0, 1  # Fundo laranja
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text: "65% a 75%\nFC máxima"  # Quarta coluna vazia
+                canvas.before:
+                    Color:
+                        rgba: 0/255,128/255,128/255, 1  # Fundo cinza claro
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+            # Continue para as outras três linhas da mesma maneira
+            Label:
+                text: "Forte"
+                canvas.before:
+                    Color:
+                        rgba: 241/255,96/255,30/255, 1  # Fundo laranja escuro
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text: "75% a 85%\nFC máxima"  # Segunda coluna vazia
+                canvas.before:
+                    Color:
+                        rgba: 0/255,128/255,128/255, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text: "Personalizada"
+                canvas.before:
+                    Color:
+                        rgba: 128/255,128/255,0, 1  # Fundo ciano
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+            Label:
+                text: "Com os seus\ndados"  # Quarta coluna vazia
+                canvas.before:
+                    Color:
+                        rgba: 128/255,128/255,0, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+
+
+
+
+################################################################################################
+# ScrollView para próximos treinos
+        ScrollView:
+            
+            do_scroll_y: False
+            do_scroll_x: True
+            pos_hint: {'center_x': 0.5, "top": 0.75}  # Centraliza horizontalmente
+            size_hint: 0.98, 0.65
+
+            GridLayout:
+                cols: 4
+                size_hint_x: None
+                width: self.minimum_width
+
+                # Primeiro treino
+                GridLayout:
+                    rows: 1
+                    size_hint: None, None  # Tamanho fixo para o GridLayout
+                    size: 150, 100  # Definindo tamanho manual
+                    canvas:
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                            source: 'icones/fundo/fundo_1.png'
+                    Label:
+                        pos_hint: {'center_x': 0.5, 'top': 0.9}
+                        size_hint: 0.95, 0.05
+                        text: "Caminhada\nTempo: 5 min\nPace: "
+                        bold: True
+
+                # Segundo treino
+                GridLayout:
+                    rows: 1
+                    size_hint: None, None  # Tamanho fixo para o GridLayout
+                    size: 150, 100  # Definindo tamanho manual
+                    canvas:
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                            source: 'icones/fundo/fundo_6.png'
+                    Label:
+                        pos_hint: {'center_x': 0.5, 'top': 0.9}
+                        size_hint: 0.95, 0.05
+                        text: "Trote Leve\nTempo: 10 min\nPace: "
+                        bold: True
+
+                # Terceiro treino
+                GridLayout:
+                    rows: 1
+                    size_hint: None, None  # Tamanho fixo para o GridLayout
+                    size: 150, 100  # Definindo tamanho manual
+                    canvas:
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                            source: 'icones/fundo/fundo_3.png'
+                    Label:
+                        pos_hint: {'center_x': 0.5, 'top': 0.9}
+                        size_hint: 0.95, 0.05
+                        text: " Corrida Forte\nTempo: 15 min\nPace: "
+                        bold: True
+                # Quarto treino
+                GridLayout:
+                    rows: 1
+                    size_hint: None, None  # Tamanho fixo para o GridLayout
+                    size: 150, 100  # Definindo tamanho manual
+                    canvas:
+                        Rectangle:
+                            size: self.size
+                            pos: self.pos
+                            source: 'icones/fundo/fundo_1.png'
+                    Label:
+                        pos_hint: {'center_x': 0.5, 'top': 0.9}
+                        size_hint: 0.95, 0.05
+                        text: "Caminhada\nTempo: 5 min\nPace: "
+                        bold: True

@@ -1,0 +1,78 @@
+#:import utils kivy.utils
+#:include kv/homepage.kv
+#:include kv/atividade.kv
+#:include kv/configuracoes.kv
+#:include kv/historico.kv
+#:include kv/ranking.kv
+#:include kv/treino.kv
+#:include kv/perfilconfig.kv
+#:include kv/fotoperfil.kv
+#:include kv/login.kv
+#:include kv/cadastrarcorredor.kv
+#:include kv/teste2.kv
+
+
+<RootWidget>:
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#001824")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        Image:
+            pos_hint: {"right": 0.975, "top": 0.975}
+            size_hint: 0.2, 0.2
+            source: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\corrida1.png"
+            name: foto_perfil
+            id: foto_perfil
+        ScreenManager:
+            pos_hint: {"right": 1, "top": 1}
+            size_hint: 1, 1
+            id: screen_manager
+            Login:
+                name: "login"
+                id: login
+            HomePage:
+                name: "homepage"
+                id: homepage
+            Configuracoes:
+                name: "configuracoes"
+                id: configuracoes
+            Ranking:
+                name: "ranking"
+                id: ranking
+            Historico:
+                name: "historico"
+                id: historico
+            Atividade:
+                name: "atividade"
+                id: atividade
+            Treino:
+                name: "treino"
+                id: treino
+            Perfilconfig:
+                name: "perfilconfig"
+                id: perfilconfig
+            Fotoperfil:
+                name: "fotoperfil"
+                id: fotoperfil
+            cadastrarcorredor:
+                name: "cadastrarcorredor"
+                id: cadastrarcorredor
+            Teste2:
+                name: "teste2"
+                id: teste2
+
+
+
+
+
+##########################################################
+        
+
+
+
+
+    

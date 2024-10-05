@@ -1,0 +1,56 @@
+<cadastrarcorredor>:
+    FloatLayout:
+        canvas:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'icones/bg1.png'
+
+# testando a posicao que adicionei o labelbutton no arquivo kv
+        LabelButton:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: 'icones/botao.png' if self.state == 'normal' else 'icones/botao_apertado.png'
+            on_release: app.firebase.criar_conta(email_input.text, senha_input.text)
+            text: 'Faça seu cadastro'
+            pos_hint: {'right': 0.9, 'top': 0.2}
+            size_hint: 0.8, 0.2
+
+        Label:
+            id: label_cadastrar_corredor
+            text: 'Cadastrar [color=#00CFDB]corredor(a)[/color]'
+            bold: True
+            markup: True
+            pos_hint: {'right': 0.95, 'top': 0.98}
+            size_hint: 0.98, 0.12
+        TextInput:
+            id: nome_input
+            hint_text: 'Nome completo'
+            pos_hint: {'right': 0.9, 'top': 0.8}
+            size_hint: 0.8, 0.1
+        TextInput:
+            id: data_nascimento_input
+            hint_text: 'Data de nascimento (dd/mm/aaaa)' 
+            pos_hint: {'right': 0.9, 'top': 0.68}
+            size_hint: 0.8, 0.1
+        TextInput:
+            id: genero_input
+            hint_text: 'Gênero' 
+            pos_hint: {'right': 0.9, 'top': 0.56}
+            size_hint: 0.8, 0.1
+        TextInput:
+            id: email_input
+            hint_text: 'E-mail'
+            pos_hint: {'right': 0.9, 'top': 0.44}
+            size_hint: 0.8, 0.1
+        TextInput:
+            id: senha_input
+            password: True
+            hint_text: 'Senha' 
+            pos_hint: {'right': 0.9, 'top': 0.32}
+            size_hint: 0.8, 0.1
+
+
+  

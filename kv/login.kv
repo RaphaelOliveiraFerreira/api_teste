@@ -1,0 +1,52 @@
+<login>:
+    FloatLayout:
+        canvas:
+            Rectangle:
+                pos: self.pos  # Define a posição diretamente
+                size: self.size  # Define o tamanho diretamente
+                source: 'icones/bg1.png'
+        Label:
+            text: 'Entre e [color=#00CFDB]corra como nunca!!![/color]'
+            bold: True
+            markup: True
+            pos_hint: {'right': 0.9, 'top': 0.9}
+            size_hint: 0.8, 0.2
+        TextInput:
+            id: email_login_input
+            hint_text: 'E-mail'
+            pos_hint: {'right': 0.9, 'top': 0.7}
+            size_hint: 0.8, 0.1
+        TextInput:
+            id: senha_login_input
+            password: True
+            hint_text: 'Senha' 
+            pos_hint: {'right': 0.9, 'top': 0.55}
+            size_hint: 0.8, 0.1
+        Label:
+            text:'[color=#00CFDB]Faça o seu login[/color]'
+            id: label_login_error
+            bold: True
+            markup: True
+            pos_hint: {'right': 0.9, 'top': 0.4}
+            size_hint: 0.8, 0.1
+        LabelButton:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: 'icones/botao.png' if self.state == 'normal' else 'icones/botao_apertado.png'
+            on_release: app.firebase.fazer_login(email_login_input.text, senha_login_input.text)
+            text: 'Faça  seu login'
+            pos_hint: {'right': 0.45, 'top': 0.2}
+            size_hint: 0.25, 0.1
+        LabelButton:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: 'icones/botao.png' if self.state == 'normal' else 'icones/botao_apertado.png'
+            on_release: app.mudar_tela("cadastrarcorredor")
+            text: 'Faça seu cadastro'
+            pos_hint: {'right': 0.95, 'top': 0.2}
+            size_hint: 0.25, 0.1
+

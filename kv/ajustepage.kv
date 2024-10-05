@@ -1,0 +1,56 @@
+<AjustePage>
+    FloatLayout
+        canvas:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\bg1.png"
+
+        Label:
+            pos_hint: {"right": 0.85, "top": 0.95}
+            size_hint: 0.7, 0.2
+            bold: True
+            text: "Ajustepage"
+            id: id_pessoa
+# Mudar foto de perfil
+        ImageButton:
+            pos_hint: {"right": 0.5, "top": 0.7}
+            size_hint: 0.5, 0.15
+            source: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\bg1.png"
+            on_release: print("Ir para tela mudar foto perfil")
+        LabelButton:
+            pos_hint: {"right": 0.5, "top": 0.7}
+            size_hint: 0.5, 0.15
+            text: "Mudar foto do perfil"
+            print("Ir para tela mudar foto perfil")
+
+# adicionar vendedor 
+        ImageButton:
+            pos_hint: {"right": 0.5, "top": 0.5}
+            size_hint: 0.5, 0.15
+            source: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\bg1.png"
+            on_release: print("Acompanhar vendedor")
+        LabelButton:
+            pos_hint: {"right": 0.5, "top": 0.7}
+            size_hint: 0.5, 0.15
+            text: "Mudar foto do perfil"
+            print("Acompanhar vendedor")
+# ver as vendas
+        ImageButton:
+            pos_hint: {"right": 0.5, "top": 0.3}
+            size_hint: 0.5, 0.15
+            source: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\bg1.png"
+            on_release: print("Ver vendas")
+        LabelButton:
+            pos_hint: {"right": 0.9, "top": 0.5}
+            size_hint: 0.5, 0.15
+            text: "ver vendas"
+            print("Ver vendas")
+
+# botao de voltar
+        
+        ImageButton:
+            pos_hint: {"right": 0.2, "top": 0.12}
+            size_hint: 0.2, 0.12
+            source: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\bg1.png"
+            on_release: app.mudar_tela('homepage')

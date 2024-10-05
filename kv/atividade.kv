@@ -1,0 +1,139 @@
+
+<Atividade>:
+    FloatLayout:
+        canvas:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: 'icones/bg1.png'
+# selecionar tipo de atividade
+# botoes 
+        LabelButton:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: 'icones/botao.png' if self.state == 'normal' else 'icones/botao_apertado.png'
+            on_release: app.adicionar_atividade()
+            text: 'Registrar'
+            pos_hint: {'right': 0.95, 'top': 0.2}
+            size_hint: 0.4, 0.2   
+
+            
+        LabelButton:
+            canvas.before:
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: 'icones/botao.png' if self.state == 'normal' else 'icones/botao_apertado.png'
+            on_release: app.mudar_tela('homepage')
+            text: 'Cancelar'
+            pos_hint: {'right': 0.45, 'top': 0.2}
+            size_hint: 0.4, 0.2
+
+
+        Label:
+            pos_hint: {'center_x': 0.5, 'top': 0.98}
+            size_hint: 0.8, 0.05
+            id: label_atividade
+            text: "Como você se sente após a atividade \n(Intensidade do treino)"
+            
+        # ScrollView para tipo de atividade
+        ScrollView:
+            pos_hint: {"center_x": 0.5, "top": 0.9}
+            size_hint: 0.8, 0.15  # Reduzindo o tamanho horizontal para centralizar
+            do_scroll_y: False  # Desativa a rolagem vertical
+            do_scroll_x: True  # Ativa a rolagem horizontal
+            
+            GridLayout:
+                rows: 1
+                id: tipo_atividade
+                size_hint_x: None
+                height: self.minimum_height
+                width: self.minimum_width  # Ajusta a largura ao conteúdo
+                spacing: dp(10)
+                padding: dp(10)
+                col_default_width: "100dp"
+                col_force_default: True
+
+
+        # Selecionar tipo de treino
+        Label:
+            pos_hint: {'center_x': 0.5, 'top': 0.73}  # Ajustado para ficar abaixo do primeiro
+            size_hint: 0.8, 0.05
+            id: label_treino
+            text: "Selecione o tipo de treino"
+
+        # ScrollView para tipo de treino
+        ScrollView:
+            pos_hint: {"center_x": 0.5, "top": 0.66}  # Ajustado para ficar abaixo do primeiro
+            size_hint: 0.8, 0.15  # Reduzindo o tamanho horizontal para centralizar
+            do_scroll_y: False  # Desativa a rolagem vertical
+            do_scroll_x: True  # Ativa a rolagem horizontal
+            
+            GridLayout:
+                rows: 1
+                id: tipo_treino
+                size_hint_x: None
+                height: self.minimum_height
+                width: self.minimum_width  # Ajusta a largura ao conteúdo
+                spacing: dp(10)
+                padding: dp(10)
+                col_default_width: "100dp"
+                col_force_default: True
+
+        Label:
+            pos_hint: {'right':1, 'top': 1}
+            size_hint: 0.2, 0.025
+            id: data_hoje
+            bold: True
+            text: "21/01/2024"
+
+
+
+        # selecionar data da atividade
+        GridLayout
+            rows: 1
+            pos_hint: {'right': 0.9, 'top': 0.50}
+            size_hint: 0.8, 0.08
+            Label:
+                text: "Data da\n atividade"
+                id: data_atividade
+            TextInput:
+                hint_text:'Dia'
+                id: dia_input
+            TextInput:
+                hint_text:'Mês'
+                id: mes_input
+            TextInput:
+                hint_text:'Ano'
+                id: ano_input
+
+        # selecionar tempo
+        GridLayout
+            rows: 1
+            pos_hint: {'right': 0.9, 'top': 0.40}
+            size_hint: 0.8, 0.08
+            Label:
+                text: "Tempo de\n atividade"
+                id: label_atividade_tempo
+            TextInput:
+                id: tempo_atividade_minutos
+                hint_text: 'minutos'
+
+            TextInput:
+                id: tempo_atividade_segundos
+                hint_text:'Segundos'
+        # selecionar distancia
+        GridLayout
+            rows: 1
+            pos_hint: {'right': 0.9, 'top': 0.30}
+            size_hint: 0.8, 0.08
+
+            Label:
+                text: "Distancia (km)"
+                id: label_distancia
+            TextInput:
+                id: distancia_percorrida
+                hint_text: 'Insira a distancia em km'
+                 

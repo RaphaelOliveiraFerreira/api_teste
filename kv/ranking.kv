@@ -1,0 +1,21 @@
+<Ranking>:
+    BoxLayout:
+        orientation: 'vertical'
+        canvas:
+            Rectangle:
+                size: self.size
+                pos: self.pos
+                source: r"C:\Users\raphael.ferreira\Desktop\Python\.venv\Projeto app\icones\bg1.png"
+
+        Label:
+            text: "pagina de Ranking!"
+            font_size: 25
+            size_hint_y: None
+            height: 50
+
+        Button:
+            text: "Ir para homepage pelo Ranking agora"
+            size_hint_y: None
+            height: 50
+            on_release:
+                app.mudar_tela("homepage")
